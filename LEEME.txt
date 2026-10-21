@@ -1,0 +1,27 @@
+SEMÁFORO DIDI PARA IPHONE (necesita un Mac con Xcode)
+
+Qué hace: mientras estás en Didi, lee la pantalla, saca el valor, los km y los minutos de la oferta y te manda un aviso: verde, amarillo o rojo.
+Importante: este código no se ha podido probar todavía. Es posible que haya que ajustar detalles al probarlo en tu iPhone.
+
+PASOS EN EL MAC
+1. Abre Xcode > File > New > Project > iOS > App. Nombre: DidiSemaforo. Interfaz: SwiftUI.
+2. Reemplaza el contenido de ContentView.swift por el archivo ContentView.swift de esta carpeta.
+3. File > New > Target > Broadcast Upload Extension. Nombre: Transmision. Quita la marca de "Include UI Extension".
+4. En la extensión nueva, reemplaza el contenido de SampleHandler.swift por el de esta carpeta.
+5. En ContentView.swift, cambia "com.tunombre.DidiSemaforo.Transmision" por el identificador real de la extensión (lo ves en Signing & Capabilities de la extensión).
+6. En Signing & Capabilities, en las dos partes (app y extensión), elige tu cuenta de Apple en "Team".
+7. Conecta el iPhone con cable. En el iPhone activa Ajustes > Privacidad y seguridad > Modo de desarrollador.
+8. Elige tu iPhone arriba en Xcode y toca Run.
+9. En el iPhone: Ajustes > General > VPN y gestión de dispositivos > confía en tu cuenta.
+
+USO
+1. Añade el botón de grabar: Ajustes > Centro de control > Grabación de pantalla.
+2. Abre la app Semáforo Didi, toca el botón y elige "Iniciar transmisión".
+3. Abre Didi. Los avisos bajan arriba cuando llega una oferta.
+4. Permite los avisos de la app en el modo Conducción (Ajustes > Concentración > Conducción).
+
+LÍMITES
+- Con cuenta gratis de Apple, la app deja de abrir a los 7 días: hay que volver a instalarla con Run.
+- Hay que iniciar la transmisión cada vez que empiezas a trabajar.
+- Si Didi bloquea la grabación de pantalla, el aviso no saldrá.
+- Tus límites están al inicio de SampleHandler.swift.
